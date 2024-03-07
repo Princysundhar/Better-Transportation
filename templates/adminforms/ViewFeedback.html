@@ -1,0 +1,32 @@
+{% extends 'adminforms/admin_index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="" method="get">
+<table width="475" border="1" class="table table-bordered">
+  <tr style="background-color: orange;color: #0b1120">
+    <th width="20" scope="row"><div align="center">#</div></th>
+    <th width="107"><div align="center">Username</div></th>
+    <th width="70"><div align="center">Date</div></th>
+    <th width="127">Feedback</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>&nbsp;{{ forloop.counter }}</td>
+    <td>{{ i.USER_TABLE.name }}</td>
+    <td>{{ i.date }}</td>
+    <td>&nbsp;{{ i.feedback }}</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
+{% endblock %}

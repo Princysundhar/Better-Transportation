@@ -1,0 +1,28 @@
+{% extends 'adminforms/admin_index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form action="/reply_sent/{{ id }}" method="post">
+    {% csrf_token %}
+    <table width="439" border="1" class="table table-bordered">
+    <tr>
+    <th width="68" height="78" scope="row">Reply</th>
+    <td width="341"><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5"></textarea></td>
+  </tr>
+  <tr>
+    <th height="82" colspan="2" scope="row"><input type="submit" name="button" id="button" class="btn btn-primary" value="Send" /></th>
+    </tr>
+</table>
+
+</form>
+</body>
+</html>
+{% endblock %}

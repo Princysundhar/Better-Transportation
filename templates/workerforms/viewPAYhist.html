@@ -1,0 +1,46 @@
+{% extends 'workerforms/worker_index.html' %}
+{% block body %}
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/view_wpayhistory_post">
+<table width="427" border="1">
+    <tr>
+      <th width="159" scope="row">Choose Date : </th>
+      <td width="168"><label for="textfield4"></label>
+      <input type="date" name="textfield" id="textfield4" /></td>
+      <td width="78"><input type="submit" name="button" id="button" value="Search" /></td>
+    </tr>
+      </table>
+<p>&nbsp;</p>
+<table width="330" border="1">
+  <tr>
+    <th width="50" scope="col">#</th>
+    <th width="93" scope="col">Date</th>
+    <th width="165" scope="col">Amount</th>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ i.date }}</td>
+    <td>{{ i.payment_mode }}</td>
+  </tr>
+    {% endfor %}
+  <tr>
+    <td colspan="2"><div align="center">Total </div></td>
+    <td>{{ i.total }}</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</form>
+</body>
+</html>
+
+{% endblock %}

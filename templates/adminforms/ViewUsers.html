@@ -1,0 +1,34 @@
+{% extends 'adminforms/admin_index.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<table width="475" border="1" class="table table-bordered">
+  <tr style="background-color: orange;color: #0b1120">
+      <th width="18" scope="row">#</th>
+      <th width="76"><div align="center">Name</div></th>
+      <th width="78"><div align="center">Photo</div></th>
+      <th width="180"><div align="center">Email</div></th>
+      <th width="148"><div align="center">Contact</div></th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td scope="row">&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.name }}</td>
+      <td><img src="{{ i.photo }}" height="100px" width="100px" alt=""/></td>
+      <td>{{ i.contact }}</td>
+      <td>{{ i.email }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
